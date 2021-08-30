@@ -1,6 +1,10 @@
 # Lab 1 Introduction to C#
 
 * Deadline: 10.09.2021
+* The lab has to be manually approved by the teaching assistants during lab hour.
+  * The student is expected to explain the code during the manually approval.
+  * All code has to be submitted before the deadline, but can be approved on the first lab after the deadline.
+  * It is possible to get the code approved before the deadline.
 
 ## Overview
 
@@ -48,7 +52,7 @@ To complete this lab, you would need:
   * Please clone the assignments repository and open the assignments folder in VSCode.
   * VSCode will then prompt to install the recommended extensions.
   * Install the recommended extensions.
-    * If this for some reason should not happen, then it is possible to find the list [here](../.VSCode/extensions.json).
+    * If this for some reason should not happen, then it is possible to find the list [here](../.vscode/extensions.json).
 
 After the installation it could be a nice thing to log out and in again or just restart the computer.
 
@@ -154,7 +158,7 @@ The queue should have the following functionality:
 | ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Enqueue(item) | void Enqueue(string value); | Adds a value to the end of the queue                                                                                                                                                                            |
 | Dequeue()     | string Dequeue();           | Returns the first element or throws an exception if the queue is empty                                                                                                                                          |
-| Size { get; } | int Length { get; }         | Returns the number of elements in the queue as an integer                                                                                                                                                       |
+| Length { get; } | int Length { get; }         | Returns the number of elements in the queue as an integer                                                                                                                                                       |
 | Grow()        | Not defined in interfaces   | When called it will create a new array of double the size as the old, copy all elements from the old array to the new array in the same order, then it should assign the new array as the working data storage. |
 
 ### IStringQueue
