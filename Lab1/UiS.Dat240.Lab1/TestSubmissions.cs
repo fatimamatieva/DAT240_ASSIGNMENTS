@@ -14,7 +14,7 @@ namespace UiS.Dat240.Lab1
         public static IStringQueue CreateStringQueue()
         {
             
-            return StringQueue();
+            return new StringQueue();
         }
 
         public static IObjectQueue CreateObjectQueue()
