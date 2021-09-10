@@ -8,73 +8,73 @@ namespace UiS.Dat240.Lab1.Queues
         void Enqueue(string value);
         string Dequeue();
     }
-    public class StringQueue : IStringQueue
 
+    public class StringQueue : IStringQueue
     {
-        public int Length => size;
-        public string[] values;
-        private int foran = 0;
-        private int sist = 0;
-        private int size = 0;
+        public string[] q;
+        private int end=0;
+        private int start=0;
+        private int Size = 0;
+
+        public int Length => Size;
+
         public StringQueue()
         {
-            values = new string[10];
-            var newValues = new string[values.Length * 2];
-            values = newValues;
+            q = new string[1];
         }
 
-        public string Dequeue()
-        {
-            string newArray = values[foran];
-            values[foran] = null;
 
-            if (size == 0)
-            {
-                throw new Exception("Queue is tom");
-
-            }else if(size > 0){
-                size--;
-                for(int i= 1; i < values.Length; i++){
-                    values[i-1] = values[i];
-                }
-                sist--;
-                values[sist] = null;
-                if(foran == sist){
-                    foran = 0;
-                }
-                return newArray;
-            }
-            string output = values[0];
-                size--;
-                         
-            return output;
-
-        }
-
+        // Enqueue
         public void Enqueue(string value)
         {
-            if (values.Length == size)
+            //throw new NotImplementedException();
+            if(q.Length == Size)
             {
                 Grow();
             }
-            
+                q[end] = value;
+                end++;
+                Size++;
+        }
+        public string Dequeue()
+        {
+            //throw new System.NotImplementedException();
+            string newarray = q[start];
+            q[start] = null;
+            if (Size <= 0)
             {
-                values[sist] = value;
-                size++;
-                sist++;
+                throw new Exception("The size cant be 0 or bellow");
             }
-
+            else if (Size > 0)
+            {
+                Size--;
+                for(int i=1; i < q.Length; i++)
+                {
+                    q[i-1] = q[i];
+                }
+                end--;
+                q[end] = null;
+                if(start == end)
+                {
+                    start = 0;
+                }
+                /*else
+                {
+                    start++;
+                }*/
+            }
+            return newarray;
         }
 
-
-        public void Grow(){
-            var newValues = new string[values.Length * 2];
-            values.CopyTo(newValues, 0);
-            values = newValues;
-
-
+        public void Grow()
+        {
+            string[] newarray = new string[q.Length * 2];
+            for (int i=0; i < q.Length; i++)
+            {
+                newarray[i] = q[i];
+            }
+            q = newarray;
         }
-
 
     }
 }
