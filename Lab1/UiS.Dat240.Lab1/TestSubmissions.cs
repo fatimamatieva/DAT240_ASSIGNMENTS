@@ -13,7 +13,8 @@ namespace UiS.Dat240.Lab1
         // return an instance of your implementation
         public static IStringQueue CreateStringQueue()
         {
-           return new StringQueue();
+           //return new StringQueue();
+           throw new NotImplementedException();
         }
 
         public static IObjectQueue CreateObjectQueue()
