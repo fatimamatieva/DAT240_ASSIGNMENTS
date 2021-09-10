@@ -6,6 +6,8 @@
         void Enqueue(object value);
         object Dequeue();
     }
-    public class ObjectQueue: IObjectQueue
+    public class ObjectQueue: IObjectQueue {
+        
+    }
     
 }
