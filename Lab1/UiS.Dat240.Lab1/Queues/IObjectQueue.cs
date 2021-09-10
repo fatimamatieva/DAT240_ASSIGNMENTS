@@ -6,7 +6,7 @@
         void Enqueue(object value);
         object Dequeue();
     }
-    public class Object : IObjectQueue
+    public class ObjectQueue : IObjectQueue
 
     {
         public int Length => stor;
@@ -14,7 +14,7 @@
         private int foran = 0;
         private int sist = 0;
         private int stor = 0;
-        public StringQueue()
+        public ObjectQueue()
         {
             values = new string[10];
             var newValues = new string[values.Length * 2];
