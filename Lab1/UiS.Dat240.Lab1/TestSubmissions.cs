@@ -27,7 +27,8 @@ namespace UiS.Dat240.Lab1
         public static IGenericQueue<T> CreateGenericQueue<T>()
         {
             // TODO: Implement
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new GenericQueue<T>();
         }
 
         public static IGenericPriorityQueue<T> CreatePriorityQueue<T>()
