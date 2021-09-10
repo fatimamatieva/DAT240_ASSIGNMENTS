@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace UiS.Dat240.Lab1.Queues
 {
@@ -9,72 +12,50 @@ namespace UiS.Dat240.Lab1.Queues
         T Dequeue();
     }
 
-    public class GenericQueue<T> : IGenericQueue<T>
+    public class GenericQueue<T> : IGenericQueue<T>, System.Collections.Generic.IEnumerable<T>
     {
-        public T[] q;
-        private int end=0;
-        private int start=0;
-        private int Size = 0;
-
-        public int Length => Size;
-
-        public GenericQueue()
+        public int spaces = 8;
+        public T[] que = new T[8];
+        public int Length 
         {
-            q = new T[1];
+            get
+            {
+                return que.Length - spaces;
+            }
         }
 
-
-        // Enqueue
         public void Enqueue(T value)
         {
-            //throw new NotImplementedException();
-            if(q.Length == Size)
+            if (spaces== 0)
             {
-                Grow();
+                this.Grow();
             }
-                q[end] = value;
-                end++;
-                Size++;
+            que[this.Length] = value;
+            spaces--;
         }
+
         public T Dequeue()
         {
-            //throw new System.NotImplementedException();
-            T newarray = q[start];
-            // q[start] = null;
-            if (Size <= 0)
+            if (1>Length)
             {
-                throw new Exception("The size cant be 0 or bellow");
+                throw new System.Exception("The queue is empty.");
             }
-            else if (Size > 0)
-            {
-                Size--;
-                for(int i=1; i < q.Length; i++)
-                {
-                    q[i-1] = q[i];
-                }
-                end--;
-                // q[end] = null;
-                if(start == end)
-                {
-                    start = 0;
-                }
-                /*else
-                {
-                    start++;
-                }*/
-            }
-            return newarray;
+            T first_element = que[0];
+            que = que.Skip(1).ToArray();
+            return first_element;
         }
 
         public void Grow()
         {
-            T[] newarray = new T[q.Length * 2];
-            for (int i=0; i < q.Length; i++)
-            {
-                newarray[i] = q[i];
-            }
-            q = newarray;
+            T[] updated = new T[2*que.Length];
+            System.Array.Copy(que, updated, que.Length);
+            this.spaces = updated.Length/2;
+            que= updated;
         }
+        public IEnumerator<T> GetEnumerator()
+        {for (int x=0; x<Length; x++){yield return que[x];}}
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {for (int y=0; y<Length; y++){yield return que[y];}}
     }
 }
