@@ -34,7 +34,8 @@ namespace UiS.Dat240.Lab1
         public static IGenericPriorityQueue<T> CreatePriorityQueue<T>()
         {
             // TODO: Implement
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new GenericPriorityQueue<T>();
         }
     }
 }
