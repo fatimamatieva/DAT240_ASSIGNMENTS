@@ -19,20 +19,18 @@ namespace UiS.Dat240.Lab1
 
         public static IObjectQueue CreateObjectQueue()
         {
-            // TODO: Implement
-            throw new NotImplementedException();
+            return new ObjectQueue
+            //throw new NotImplementedException();
         }
 
-        public static IGenericQueue<T> CreateGenericQueue<T>()
+        public static IGenericQueue CreateGenericQueue()
         {
-            // TODO: Implement
-            throw new NotImplementedException();
+            return new CreateGenericQueue();
         }
 
-        public static IGenericPriorityQueue<T> CreatePriorityQueue<T>()
+        public static IGenericPriorityQueue CreatePriorityQueue()
         {
-            // TODO: Implement
-            throw new NotImplementedException();
+            return new CreatePriorityQueue()
         }
     }
 }
