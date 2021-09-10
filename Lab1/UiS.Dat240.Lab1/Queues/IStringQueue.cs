@@ -8,16 +8,14 @@ namespace UiS.Dat240.Lab1.Queues
         void Enqueue(string value);
         string Dequeue();
     }
-
     public class StringQueue : IStringQueue
 
     {
-        //  to create an anonymous function.
-        public int Length => lengde;
+        public int Length => size;
         public string[] values;
         private int foran = 0;
         private int sist = 0;
-        private int lengde = 0;
+        private int size = 0;
         public StringQueue()
         {
             values = new string[10];
@@ -30,12 +28,12 @@ namespace UiS.Dat240.Lab1.Queues
             string newArray = values[foran];
             values[foran] = null;
 
-            if (lengde == 0)
+            if (size == 0)
             {
                 throw new Exception("Queue is tom");
 
-            }else if(lengde > 0){
-                lengde--;
+            }else if(size > 0){
+                size--;
                 for(int i= 1; i < values.Length; i++){
                     values[i-1] = values[i];
                 }
@@ -47,7 +45,7 @@ namespace UiS.Dat240.Lab1.Queues
                 return newArray;
             }
             string output = values[0];
-                lengde--;
+                size--;
                          
             return output;
 
@@ -55,14 +53,14 @@ namespace UiS.Dat240.Lab1.Queues
 
         public void Enqueue(string value)
         {
-            if (values.Length == lengde)
+            if (values.Length == size)
             {
                 Grow();
             }
             
             {
                 values[sist] = value;
-                lengde++;
+                size++;
                 sist++;
             }
 
