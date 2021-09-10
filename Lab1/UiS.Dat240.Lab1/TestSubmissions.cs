@@ -20,8 +20,7 @@ namespace UiS.Dat240.Lab1
         public static IObjectQueue CreateObjectQueue()
         {
             // TODO: Implement
-            return new ObjectQueue();
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public static IGenericQueue<T> CreateGenericQueue<T>()
