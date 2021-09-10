@@ -9,12 +9,12 @@
     public class ObjectQueue : IObjectQueue
 
 
-    {
-        public int Length => lengde;
+{
+        public int Length => size;
         public string[] values;
-        private int fremst = 0;
+        private int foran = 0;
         private int sist = 0;
-        private int lengde = 0;
+        private int size = 0;
         public StringQueue()
         {
             values = new string[10];
@@ -24,42 +24,42 @@
 
         public string Dequeue()
         {
-            string newArray = values[fremst];
-            values[fremst] = null;
+            string newArray = values[foran];
+            values[foran] = null;
 
-            if (lengde == 0)
+            if (size == 0)
             {
                 throw new Exception("Queue is tom");
 
-            }else if(lengde > 0){
-                lengde--;
+            }else if(size > 0){
+                size--;
                 for(int i= 1; i < values.Length; i++){
                     values[i-1] = values[i];
                 }
                 sist--;
                 values[sist] = null;
-                if(fremst == sist){
-                    fremst = 0;
+                if(foran == sist){
+                    foran = 0;
                 }
                 return newArray;
             }
             string output = values[0];
-                lengde--;
-                            
+                size--;
+                         
             return output;
 
         }
 
         public void Enqueue(string value)
         {
-            if (values.Length == lengde)
+            if (values.Length == size)
             {
                 Grow();
             }
             
             {
                 values[sist] = value;
-                lengde++;
+                size++;
                 sist++;
             }
 
@@ -76,4 +76,4 @@
 
 
     }
-    }
+}

@@ -13,24 +13,26 @@ namespace UiS.Dat240.Lab1
         // return an instance of your implementation
         public static IStringQueue CreateStringQueue()
         {
-            
-            return new StringQueue();
+            // TODO: Implement
+            throw new NotImplementedException();
         }
 
         public static IObjectQueue CreateObjectQueue()
         {
-            return new ObjectQueue
-            //throw new NotImplementedException();
+            // TODO: Implement
+            throw new NotImplementedException();
         }
 
-        public static IGenericQueue CreateGenericQueue()
+        public static IGenericQueue<T> CreateGenericQueue<T>()
         {
-            return new CreateGenericQueue();
+            // TODO: Implement
+            throw new NotImplementedException();
         }
 
-        public static IGenericPriorityQueue CreatePriorityQueue()
+        public static IGenericPriorityQueue<T> CreatePriorityQueue<T>()
         {
-            return new CreatePriorityQueue()
+            // TODO: Implement
+            throw new NotImplementedException();
         }
     }
 }
