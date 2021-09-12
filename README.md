@@ -1,6 +1,6 @@
 # Labs for DAT240
 
-Usefull links:
+Useful links:
 * QuickFeed https://uis.itest.run/
   
 # Deadlines
@@ -14,7 +14,7 @@ Lab 1 is about learning the dotnet type system, string manipulation, data types 
 
 # Lab2
 
-More info to come at a later point!
+The second lab is building an asp.net core ordering application.
 
 # Lab3
 
