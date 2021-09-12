@@ -1,6 +1,10 @@
 # Lab 1 Introduction to C#
 
 * Deadline: 10.09.2021
+* The lab has to be manually approved by the teaching assistants during lab hour.
+  * The student is expected to explain the code during the manually approval.
+  * All code has to be submitted before the deadline, but can be approved on the first lab after the deadline.
+  * It is possible to get the code approved before the deadline.
 
 ## Overview
 
@@ -48,7 +52,7 @@ To complete this lab, you would need:
   * Please clone the assignments repository and open the assignments folder in VSCode.
   * VSCode will then prompt to install the recommended extensions.
   * Install the recommended extensions.
-    * If this for some reason should not happen, then it is possible to find the list [here](../.VSCode/extensions.json).
+    * If this for some reason should not happen, then it is possible to find the list [here](../.vscode/extensions.json).
 
 After the installation it could be a nice thing to log out and in again or just restart the computer.
 
@@ -154,7 +158,7 @@ The queue should have the following functionality:
 | ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Enqueue(item) | void Enqueue(string value); | Adds a value to the end of the queue                                                                                                                                                                            |
 | Dequeue()     | string Dequeue();           | Returns the first element or throws an exception if the queue is empty                                                                                                                                          |
-| Size { get; } | int Length { get; }         | Returns the number of elements in the queue as an integer                                                                                                                                                       |
+| Length { get; } | int Length { get; }         | Returns the number of elements in the queue as an integer                                                                                                                                                       |
 | Grow()        | Not defined in interfaces   | When called it will create a new array of double the size as the old, copy all elements from the old array to the new array in the same order, then it should assign the new array as the working data storage. |
 
 ### IStringQueue
@@ -164,7 +168,7 @@ When creating the string queue, first create a class called something like `Stri
 ```csharp
 public class StringQueue : IStringQueue
 {
-  public int Size { get; }
+  public int Length { get; }
   public void Enqueue(string value)
   {
     throw new NotImplementedException();
@@ -253,4 +257,4 @@ The requirements for the priority queue are that an item with a higher priority 
 
 Since we now have some nice data structures, then it would be nice if we could look through them without having to dequeue and re enqueue all the different elements of the queue. It is possible to do that, but it would require a lot of processing. The way we are going to do this is by using the standard C# way of looking through data structures, which is the [foreach](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement) way. As you also can read from the link is that the foreach statement work on a `type` that implements the [IEnumerable](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-5.0) or the generic version [IEnumerable<T>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-5.0) interfaces. A `type` in this case is any `type` that can implement an interface which are `class`, `struct` or `record` constructs.
 
-There are two ways of creating the enumerable code, where one of them is returning a [IEnumerator<T>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerator-1?view=net-5.0) which navigates through each element one by one, and there is the [yield return](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield). Follow the examples on the links to implement the IEnumerable so the code can be used in a foreach statement. The yield way is probably easier to implement, but yield is just making the compiler implement an IEnumerator for us which is nice.
+The `IEnumerable<T>` should be implemented for the `IGenericQueue<T>` for the tests to pass. There are two ways of creating the enumerable code, where one of them is returning a [IEnumerator<T>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerator-1?view=net-5.0) which navigates through each element one by one, and there is the [yield return](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield). Follow the examples on the links to implement the IEnumerable so the code can be used in a foreach statement. The yield way is probably easier to implement, but yield is just making the compiler implement an IEnumerator for us which is nice.
