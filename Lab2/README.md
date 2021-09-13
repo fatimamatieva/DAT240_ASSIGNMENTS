@@ -1,6 +1,10 @@
 # Lab 2 Web Project
 
 * Deadline: 01.10.2021
+* The lab has to be manually approved by the teaching assistants during lab hour.
+  * The student is expected to explain the code during the manually approval.
+  * All code has to be submitted before the deadline, but can be approved on the first lab after the deadline.
+  * It is possible to get the code approved before the deadline.
 
 ## Downloading the updated assignments repo
 
@@ -24,9 +28,9 @@ To see the starter template, navigate to the UiS.Dat240.Lab2 directory in a comm
 
 You might see a warning like `Warning: Potential Security Risk Ahead`, which complains about the SSL certificate is not signed by a trusted certificate authority (self-signed). If this appear it is safe to click `Accept the Risk and Continue` for this page. This is only safe to do for page you trust are okay to visit, which is in this case our own web page. If the warning appears on any other page, please be careful about what you do.
 
-### Useful links:
+### How to start the lab:
 
-For this lab it can be useful to read about [Asp.net core Razor pages](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-5.0&tabs=visual-studio) at the following links:
+Please read the following page for how to work with [ASP.NET Core Razor page](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-5.0&tabs=visual-studio). In the example using CustomerDbContext database then use the `ShopContext` as well as `FoodItem` instead of `CustomerDbContext` and `Customer`. It can also be useful to read more about asp.net core at the following links.
 
 * [Asp.net core Fundamentals](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-5.0&tabs=windows)
 * [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0)
@@ -55,7 +59,9 @@ For this lab there will be no restrictions on the use of the framework like ther
 
 ### Database
 
-For lab2 you are going to use the SQLite database engine together with Entity Framework Core (EF Core). The class ShopContext is the class that is going to be used together with EF Core DBContext. You are also going to use [Code first migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli) as part of this lab. You will then need to install the dotnet-ef command line tool as described in the link. Here is a good link for how to [create the DBContext class](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/). And how to create the [connection string for the SQLite server](https://docs.microsoft.com/en-us/dotnet/standard/data/sqlite/connection-strings).
+For lab2 you are going to use the SQLite database engine together with Entity Framework Core (EF Core). The class ShopContext is the class that is going to be used together with EF Core DbContext. After it is derived from DbContext as well as containing a DbSet as described in the link about, then you can use [Code first migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli) to create the migration and the database file. For the migration you will need to install the dotnet-ef command line tool as described in the link. Here is a good link for how to [create the DBContext class with dependency injection in asp.net](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/). And how to create the [connection string for the SQLite server can be found at the bottom of the page](https://docs.microsoft.com/en-us/dotnet/standard/data/sqlite/connection-strings). 
+
+In the examples it is written how to use the in memory database instead of sqlite, but this should be quite similar with just having to write `UseSqlite` instead.
 
 For the database to work in the web application you must install the following to NuGet packages:
 
@@ -75,6 +81,8 @@ External libraries have a tendency to add complexity as well as greater security
 The following validation rules should apply for the add end edit page
 * Both name and description should contain a value which is not only whitespaces
 * The price must be greater than 0
+
+The `IFoodItemValidator.IsValid` function should return an array of all the error messages found. If only name is empty then it should return an array with only one index containing an error message. If name and description is missing a value, then it should return to strings in the array. The best way to do this is creating a C# `List<string>` and add one value for each error. Then use the `List<string>.ToArray()` to get an array from the list.
 
 #### Validation tests
 
