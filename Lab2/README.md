@@ -105,3 +105,35 @@ The tests expects that the following is registered and working properly
 
 The methods defined in the `IFoodItemProvider` interface expects the code to be async. This is a concept which can be [read more about here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/). This has some consequences for code that will usually run synchronously and means we must wrap the code in `Task.FromResult` or return `Task.CompletedTask` to support this. When using EF Core there should be a synchronous and an asynchronous method for completing database operations, and here the asynchronous way should always be used with await before. 
 Only in very rare situations should a task be waited directly instead of awaiting with the `await` keyword. Also the `Task.Wait` should not be used for these scenarios but instead `Task.GetAwaiter().GetResult()`, and the reason for this is that `GetAwaiter().GetResult()` produces a prettier stack trace with exceptions. The reason for not running a task synchronous is that it blocks the running thread, and C# only creates sparingly new threads, since there is some overhead with having too many threads. This means that if enough `Wait()` operations are in progress then all the threads could be used up before the thread pool is grown. It is possible to [read about this in depth here](https://docs.microsoft.com/nb-no/archive/blogs/vancem/diagnosing-net-core-threadpool-starvation-with-perfview-why-my-service-is-not-saturating-all-cores-or-seems-to-stall?WT.mc_id=DT-MVP-5003325).
+
+## Approval script
+
+We will require you to do the following steps under the manual approval
+
+1. Start web page
+   1. The web page should run at https://
+2. Navigate to the admin overview of all FoodItems
+3. Add new food item 
+   * Name: "UiS Pizza"
+   * Description: "Amazing pizza"
+   * Price: 159.69
+   * CreationTime: 10
+4. Add new food item
+   * Let every field be blank and create the item
+   * There should be validation errors
+   * Use the title from the list bellow and create it again
+   * There should now be fewer errors
+5. Add the complete new food item 
+   * Name: "AA Pizza"
+   * Description: "Another Amazing pizza"
+   * Price: 189.69
+   * CreationTime: 15
+6. Edit AA Pizza
+   *  Name: B Pizza
+   *  Description: Boring Pizza
+   *  Price: 119
+7. Show the customer overview of all the pizza
+8. Show and explain the implementations of the interfaces
+9. Show validation
+10. Show Startup and DI
+11. Show the unit tests
