@@ -134,3 +134,6 @@
 /Users/fatimamatieva/Desktop/dat240/assignments/Lab2/UiS.Dat240.Lab2/obj/Debug/net5.0/ref/UiS.Dat240.Lab2.dll
 /Users/fatimamatieva/Desktop/dat240/assignments/Lab2/UiS.Dat240.Lab2/obj/Debug/net5.0/UiS.Dat240.Lab2.pdb
 /Users/fatimamatieva/Desktop/dat240/assignments/Lab2/UiS.Dat240.Lab2/obj/Debug/net5.0/UiS.Dat240.Lab2.genruntimeconfig.cache
+/Users/fatimamatieva/Desktop/dat240/assignments/Lab2/UiS.Dat240.Lab2/obj/Debug/net5.0/Razor/Pages/Add.cshtml.g.cs
+/Users/fatimamatieva/Desktop/dat240/assignments/Lab2/UiS.Dat240.Lab2/obj/Debug/net5.0/Razor/Pages/Admin.cshtml.g.cs
+/Users/fatimamatieva/Desktop/dat240/assignments/Lab2/UiS.Dat240.Lab2/obj/Debug/net5.0/Razor/Pages/Edit.cshtml.g.cs
