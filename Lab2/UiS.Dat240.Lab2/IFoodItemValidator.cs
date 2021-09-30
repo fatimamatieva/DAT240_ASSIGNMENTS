@@ -6,4 +6,11 @@ namespace UiS.Dat240.Lab2
     {
         string[] IsValid(FoodItem foodItem);
     }
+
+
+
+    public class FoodItemValidator : IFoodItemValidator
+    {
+
+    }
 }
