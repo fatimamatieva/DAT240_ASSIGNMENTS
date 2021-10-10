@@ -50,13 +50,13 @@ From the lectures the current diagram was created with some modifications:
 ![4](./docs/4.svg)
 
 
-### Fulfillment
+### Fulfillment Context
 
 
 ![5](./docs/5.svg)
 
 
-### Invoicing
+### Invoicing Context
 
 
 ![6](./docs/6.svg)
@@ -66,13 +66,13 @@ From the lectures the current diagram was created with some modifications:
 
 ## Task
 
-For this lab you are supposed to implement the parts of the diagram which is currently not implemented. Continuous lines are api class from a pipeline to a service, where the service should be in a different context from the pipeline, and dotted lines are event based messages sent across context boundaries. the products and cart implementation are given as an inspiration for how to implement the rest.
+For this lab you are supposed to implement the parts of the diagram which is currently not implemented. Continuous lines are api class from a pipeline to a service, where the service should be in a different context from the pipeline, and dotted lines are event based messages sent across context boundaries. The products and cart implementation are given as an inspiration for how to implement the rest.
 
 ### Organizing the code
 
 You should use the same folder structure as found in `Core/Domain/Cart` and `Core/Domain/Products`. Every class, interface, record and enum should be in its own file unless it is part of another class like for instance the pipeline handlers, where the request is defined in the same file as the handler. 
 
-The code should follow the DDD principal learned in class as well as is already used in the Cart and Products folders. You should use Mediatr and the pipelines to handle context requests as shown in the Cart and Products folders.
+The code should follow the DDD principal learned in class as well as is already used in the Cart and Products folders. You should use Mediatr and the pipelines to handle context requests as shown in the Cart and Products folders. The the domain models is required to be stored in the database so they should be added to the ShopContext.
 
 Folder structure:
 ```
@@ -146,3 +146,14 @@ The fulfillment context should contain data and logic for handling the order aft
 ### The invoice context
 
 The invoice context should contain data and logic related to payment of the order. After the order is created this should handle things like sending the invoice to the customer as well as handling the payment information. In this lab, we will only create the invoice and display it as described in the task points at the top.
+
+### Value objects and EF Core
+
+This link describes how to define an object as an value object (Owned entity) in entity framework. [https://docs.microsoft.com/en-us/ef/core/modeling/owned-entities](https://docs.microsoft.com/en-us/ef/core/modeling/owned-entities).
+
+### Tips
+
+Look at how things are implemented in Cart and Product Context. To get the extra information needed for the order, you could create a form on the checkout page, like Product have a create new food item. Use the code already there, and the code created in lab2 to get inspiration for how to do this lab.
+
+Also try and find the code for the different objects from the product and cart context shown in the diagrams. The cart and product context models have already been created, and see how the fields from the code match up with the diagram.
+

@@ -3,13 +3,16 @@ classDiagram
     direction LR
     class Offer {
         <<Aggregate root>>
+        + Id
         + OrderId
         + Shipper
     }
     class Shipper {
+        + Id
         + Name
     }
     class Reimbursement {
+        + Id
         + Shipper
         + Amount
         + InvoiceId

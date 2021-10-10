@@ -3,6 +3,7 @@ classDiagram
     direction LR
     class Invoice {
         <<Aggregate root>>
+        + Id
         + Customer
         + Address
         + Amount
@@ -10,9 +11,11 @@ classDiagram
         + Status
     }
     class Payment {
+        + Id
         + Amount
     }
     class Customer {
+        + Id
         + Name
     }
     class Status {

@@ -8,8 +8,8 @@ classDiagram
     class Order {
         <<Aggregate root>>
         + Id
-        + Date
-        + OrderLines
+        + OrderDate
+        + OrderLines (List)
         + Location
         + Notes
         + Customer
@@ -19,9 +19,9 @@ classDiagram
 
     class OrderLine{
         + Id
-        +Item
-        +Price
-        +Count
+        + Item
+        + Price
+        + Count
     }
     class Location {
         <<ValueObject>>

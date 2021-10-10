@@ -24,10 +24,11 @@ Under you can find the diagram we currently have from lab two. It is very basic 
 classDiagram
     class FoodItem{
         <<Aggregate root>>
+        + Id
         + Name
         + Description
         + Price
-        + Cooktime
+        + CookTime
     }
 ```
 
@@ -54,10 +55,11 @@ flowchart TD
 classDiagram
     class FoodItem {
         <<Aggregate root>>
+        + Id
         + Name
         + Description
         + Price
-        + Cooktime
+        + CookTime
     }
 ```
 
@@ -70,7 +72,7 @@ classDiagram
     class ShoppingCart {
         <<Aggregate root>>
         + Id
-        + Items
+        + Items (List)
         + AddItem()
     }
     class CartItem {
@@ -94,8 +96,8 @@ classDiagram
     class Order {
         <<Aggregate root>>
         + Id
-        + Date
-        + OrderLines
+        + OrderDate
+        + OrderLines (List)
         + Location
         + Notes
         + Customer
@@ -105,9 +107,9 @@ classDiagram
 
     class OrderLine{
         + Id
-        +Item
-        +Price
-        +Count
+        + Item
+        + Price
+        + Count
     }
     class Location {
         <<ValueObject>>
@@ -135,20 +137,23 @@ classDiagram
     Order --> Status
 ```
 
-### Fulfillment
+### Fulfillment Context
 
 ```mermaid
 classDiagram
     direction LR
     class Offer {
         <<Aggregate root>>
+        + Id
         + OrderId
         + Shipper
     }
     class Shipper {
+        + Id
         + Name
     }
     class Reimbursement {
+        + Id
         + Shipper
         + Amount
         + InvoiceId
@@ -157,13 +162,14 @@ classDiagram
     Offer --> Reimbursement
 ```
 
-### Invoicing
+### Invoicing Context
 
 ```mermaid
 classDiagram
     direction LR
     class Invoice {
         <<Aggregate root>>
+        + Id
         + Customer
         + Address
         + Amount
@@ -171,9 +177,11 @@ classDiagram
         + Status
     }
     class Payment {
+        + Id
         + Amount
     }
     class Customer {
+        + Id
         + Name
     }
     class Status {
@@ -200,13 +208,13 @@ classDiagram
 
 ## Task
 
-For this lab you are supposed to implement the parts of the diagram which is currently not implemented. Continuous lines are api class from a pipeline to a service, where the service should be in a different context from the pipeline, and dotted lines are event based messages sent across context boundaries. the products and cart implementation are given as an inspiration for how to implement the rest.
+For this lab you are supposed to implement the parts of the diagram which is currently not implemented. Continuous lines are api class from a pipeline to a service, where the service should be in a different context from the pipeline, and dotted lines are event based messages sent across context boundaries. The products and cart implementation are given as an inspiration for how to implement the rest.
 
 ### Organizing the code
 
 You should use the same folder structure as found in `Core/Domain/Cart` and `Core/Domain/Products`. Every class, interface, record and enum should be in its own file unless it is part of another class like for instance the pipeline handlers, where the request is defined in the same file as the handler. 
 
-The code should follow the DDD principal learned in class as well as is already used in the Cart and Products folders. You should use Mediatr and the pipelines to handle context requests as shown in the Cart and Products folders. The the domain models is required to be stored to the database so they should be added to the ShopContext.
+The code should follow the DDD principal learned in class as well as is already used in the Cart and Products folders. You should use Mediatr and the pipelines to handle context requests as shown in the Cart and Products folders. The the domain models is required to be stored in the database so they should be added to the ShopContext.
 
 Folder structure:
 ```
@@ -284,3 +292,9 @@ The invoice context should contain data and logic related to payment of the orde
 ### Value objects and EF Core
 
 This link describes how to define an object as an value object (Owned entity) in entity framework. [https://docs.microsoft.com/en-us/ef/core/modeling/owned-entities](https://docs.microsoft.com/en-us/ef/core/modeling/owned-entities).
+
+### Tips
+
+Look at how things are implemented in Cart and Product Context. To get the extra information needed for the order, you could create a form on the checkout page, like Product have a create new food item. Use the code already there, and the code created in lab2 to get inspiration for how to do this lab.
+
+Also try and find the code for the different objects from the product and cart context shown in the diagrams. The cart and product context models have already been created, and see how the fields from the code match up with the diagram.
