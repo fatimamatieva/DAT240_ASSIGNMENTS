@@ -72,7 +72,7 @@ classDiagram
     class ShoppingCart {
         <<Aggregate root>>
         + Id
-        + Items (List)
+        +List Items
         + AddItem()
     }
     class CartItem {
@@ -97,7 +97,7 @@ classDiagram
         <<Aggregate root>>
         + Id
         + OrderDate
-        + OrderLines (List)
+        +List OrderLines
         + Location
         + Notes
         + Customer
@@ -147,6 +147,7 @@ classDiagram
         + Id
         + OrderId
         + Shipper
+        + Reimbursement
     }
     class Shipper {
         + Id
