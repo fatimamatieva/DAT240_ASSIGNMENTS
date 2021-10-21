@@ -69,18 +69,21 @@ When there is no pairing possible, a single player can play against a random ora
     - SignalR can be used to simplify this
   - Leaderboard, by team. Number of guesses and speed.
 
-### Advanced features: Multiplayer: Multiple people can join a game, all guessing  (extra credit)
+### Advanced features: Multiplayer: Multiple people can join a game, all guessing 
+
   - Oracle get's notified on who guessed what
   - Oracle picks a new tile when everyone has made their guess. 
   - Whomever guesses right first wins
 
-### Advanced features: Upload new images (extra credit)
+### Advanced features: Upload new images
+
 - Logged in user can upload new images
 - Automatically sliced
 - Manual slicing. 
 - Categorize the image
 
 ## Criteria for judging the delivery:
+
 - Separation of Concerns. Game logic is clearly separated from infrastructure logic and UI logic. 
 - Unit tests: Game logic has unit tests
 - Integration tests: Infrastructure and side effects are tested
@@ -110,10 +113,12 @@ It has 3 files
  3. Label_mapping.csv id to label mapping
 
 ## Groups
+
 - Each Group will have 5 students. Groups will be based on the self-assessment you filled out. 
 - Everyone must work in a group since exceuting a project in a team setting is one of the skills that will be assessed in this course.
 - The whole group gets same grade so everyone is collectively responsible for the group's grade.
-- 
+
+
 ## Deadline
 
 - Deadline for the project code and the report is **19.11.2021 by 16.00**
