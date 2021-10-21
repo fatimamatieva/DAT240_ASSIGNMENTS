@@ -49,7 +49,7 @@ The fewer segments needed to guess the better it is for both the players. The sc
 
 ### Basic features: Single player or Oracle mode
 
-When there is no pairing possible, a single player can play against a random oracle which selects a set of random segments incrementally. Then ask the same player to propose better segments. These segments would be pre-recorded for future guessers. Another option would be to make the game asyncrhonous by letting the proposer propose and notify when there is a guess avaialble.
+When there is no pairing possible, a single player can play against a random oracle which selects a set of random segments incrementally. Then ask the same player to propose better segments. These segments would be pre-recorded for future guessers.
 
   * User should be able to register and log in. 
   * User should be able to create a new game
