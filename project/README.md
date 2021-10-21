@@ -16,27 +16,27 @@ In two player mode, two players are paired in the beginning of the game -- The P
 
 ### Rules of the game
 
-The proposers get to see the entire image and the label
-that he/she has to help the guesser guess the label. The sooner the Guesser succeeds, the more points both the Guesser and the Proposer get.
-Example of Image and label : The proposer is shown this image and wants the guesser to guess: GoKart
+The Proposer gets to see the entire image and the label
+that they have to help the Guesser guess. The sooner the Guesser succeeds, the more points both the Guesser and the Proposer get.
+Example of Image and label : The Proposer is shown this image and wants the Guesser to guess: GoKart
 
 
 <img width="713" alt="Screenshot 2021-10-21 at 18 02 10" src="https://user-images.githubusercontent.com/1608263/138315055-88303986-cdec-4577-a13b-085f7e4dad39.png">
 
-The image is segmented into multiple segments (in this case 50 segments). The proposer can click on any of the segments (one at a time). Once the proposer clicks on a segment, that segment appears on the screen of the guesser. The Guesser then has to guess the label (unknown to the guesser). The guesser is allowed 3 tries
+The image is segmented into multiple segments (in this case 50 segments). The Proposer can click on any of the segments (one at a time). Once the Proposer clicks on a segment, that segment appears on the screen of the Guesser. The Guesser then has to guess the label (unknown to the Guesser). The Guesser is allowed 3 tries
 
-The proposer gets its turn if
-1) the guesser has three wrong guesses in a row or
-2) The guesser gives up
+The Proposer gets its turn if
+1) the Guesser has three wrong guesses in a row or
+2) The Guesser gives up
 
-Below is an example screen for the guesser after 5 segments have been chosen by the
-proposer. Pretty lousy proposer don't you think ;-)
+Below is an example screen for the Guesser after 5 segments have been chosen by the
+Proposer. Pretty lousy Proposer don't you think ;-)
 
 <img width="474" alt="Screenshot 2021-10-21 at 18 04 30" src="https://user-images.githubusercontent.com/1608263/138315345-89491740-677f-4a93-bdb6-5aa9e6812c56.png">
 
-Now the proposer has to judiciously chose the next segment based on the earlier guesses of the guesser. The figure above shows 10 segments selected by the proposer in that order. The number 1 was the first proposal, 2 the second proposal and so on..
+Now the Proposer has to judiciously chose the next segment based on the earlier guesses of the Guesser. The figure above shows 10 segments selected by the Proposer in that order. The number 1 was the first proposal, 2 the second proposal and so on..
 
-The game ends if the guesser is successfully able to guess the label, or if all segments are opened, or if the guesser decides to quit. 
+The game ends if the Guesser is successfully able to guess the label, or if all segments are opened, or if the Guesser decides to quit. 
 
 ### Points system
 
@@ -45,7 +45,7 @@ The fewer segments needed to guess the better it is for both the players. The sc
 
 ### Basic features: Single player or Oracle mode
 
-When there is no pairing possible, a single player can play against a random oracle which selects a set of random segments incrementally. Then ask the same player to propose better segments. These segments would be pre-recorded for future guessers.
+When there is no pairing possible, a single player can play against a random oracle which selects a set of random segments incrementally. Then ask the same player to propose better segments. These segments would be pre-recorded for future Guessers.
 
   * User should be able to register and log in. 
   * User should be able to create a new game
@@ -63,10 +63,9 @@ When there is no pairing possible, a single player can play against a random ora
 
 
 ### Advanced features: Two player mode 
-  - Logged in players can join started games. Two players per game. 
+  - Logged in players can join created games. Two players per game. 
   - The player that created the game takes the role of the Oracle
-  - Using client side refreshes or WebSockets 
-    - SignalR can be used to simplify this
+  - Using client side refreshes or WebSockets (SignalR is a package for ASP.NET that simplifes this) to update the page when the other player makes a selection. 
   - Leaderboard, by team. Number of guesses and speed.
 
 ### Advanced features: Multiplayer: Multiple people can join a game, all guessing 
@@ -74,17 +73,19 @@ When there is no pairing possible, a single player can play against a random ora
   - Oracle get's notified on who guessed what
   - Oracle picks a new tile when everyone has made their guess. 
   - Whomever guesses right first wins
+  - Alternative where one of the player is the Proposer and the Guessers compete. 
 
 ### Advanced features: Upload new images
 
 - Logged in user can upload new images
 - Automatically sliced
-- Manual slicing. 
+- Manual slicing 
 - Categorize the image
 
 ## Criteria for judging the delivery:
 
 - Separation of Concerns. Game logic is clearly separated from infrastructure logic and UI logic. 
+- Domain model. The domain here is not big, but the domain objects you have should be clearly defined, well connected and contain the logic required to operate on them. 
 - Unit tests: Game logic has unit tests
 - Integration tests: Infrastructure and side effects are tested
 - Code follows a readable and discoverable structure. It is easy to figure out what belongs where and things are where you expect it to be. 
@@ -100,6 +101,7 @@ When there is no pairing possible, a single player can play against a random ora
   - How you organized your collaboration and defined your process
   - How you defined your work by splitting work in smaller work items. 
   - How you tracked your work
+  - Technical decisions you made during the project and why that decision was made
   - How did you communicate
   - How did you stop and evaluate during the project. What worked and what did not work. What changes did they make and how did they work?
   - Perfectly okay to make mistakes and screw up things underway, if they can show that they acknowledged it, came up with a solution, implemented it and evaluated it.
