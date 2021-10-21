@@ -2,11 +2,7 @@
 
 ## Background 
 
-Recent advances in computational capabilities of machines along side advances in algorithmic intelligence, have surpassed expectations and resulted in stagg
-ering feats such as 'AlphaGo' defeating a world champion in the game of Go using deep neural networks. With all the
-perceived superiority of machines in decision making using Deep Learning we are interested in the question -- Do machines think like humans?
-
-
+Recent advances in computational capabilities of machines along side advances in algorithmic intelligence, have surpassed expectations and resulted in staggering feats such as 'AlphaGo' defeating a world champion in the game of Go using deep neural networks. With all the perceived superiority of machines in decision making using Deep Learning we are interested in the question -- Do machines think like humans?
 
 ## The game
 
@@ -34,7 +30,7 @@ The proposer gets its turn if
 2) The guesser gives up
 
 Below is an example screen for the guesser after 5 segments have been chosen by the
-proposer. Pretty lousy proposer dont you think ;-)
+proposer. Pretty lousy proposer don't you think ;-)
 
 <img width="474" alt="Screenshot 2021-10-21 at 18 04 30" src="https://user-images.githubusercontent.com/1608263/138315345-89491740-677f-4a93-bdb6-5aa9e6812c56.png">
 
@@ -69,8 +65,9 @@ When there is no pairing possible, a single player can play against a random ora
 ### Advanced features: Two player mode 
   - Logged in players can join started games. Two players per game. 
   - The player that created the game takes the role of the Oracle
-  - Using client side refreshes or websockets (SignalR - can easily throw in a class on this)
-  - Leaderboard, by team. Number of guesses and speed. 
+  - Using client side refreshes or WebSockets 
+    - SignalR can be used to simplify this
+  - Leaderboard, by team. Number of guesses and speed.
 
 ### Advanced features: Multiplayer: Multiple people can join a game, all guessing  (extra credit)
   - Oracle get's notified on who guessed what
