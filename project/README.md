@@ -90,13 +90,16 @@ When there is no pairing possible, a single player can play against a random ora
 - Following general object oriented principles like information hiding, tell - don't ask
 - Abstractions - Is it easy to replace the implementation of the single player Oracle with another one (for instance an AI model)
 
-## Report should reflect:
- - How you organized your collaboration and defined your process
- - How you defined your work by splitting work in smaller work items. 
- - How you tracked your work
- - How did you communicate
- - How did you stop and evaluate during the project. What worked and what did not work. What changes did they make and how did they work?
- - Perfectly okay to make mistakes and screw up things underway, if they can show that they acknowledged it, came up with a solution, implemented it and evaluated it.
+## Report:
+ - Report can be written in a Word document or an overleaf template [here](https://www.overleaf.com/project/5dad513903aef000015ae6d6)
+ - The report can be maximum 10 pages
+ - The resport should reflect:
+  - How you organized your collaboration and defined your process
+  - How you defined your work by splitting work in smaller work items. 
+  - How you tracked your work
+  - How did you communicate
+  - How did you stop and evaluate during the project. What worked and what did not work. What changes did they make and how did they work?
+  - Perfectly okay to make mistakes and screw up things underway, if they can show that they acknowledged it, came up with a solution, implemented it and evaluated it.
 
 ## Dataset
 
@@ -106,3 +109,14 @@ It has 3 files
  2. Image_mapping.csv image to id mapping
  3. Label_mapping.csv id to label mapping
 
+## Deadline
+
+- Deadline for the project code and the report is *19.11.2021 by 16.00*
+
+## Groups
+- Each Group will have 5 students. Groups will be based on the self-assessment you filled out. 
+- Everyone must work in a group since exceuting a project in a team setting is one of the skills that will be assessed in this course.
+- The whole group gets same grade so everyone is collectively responsible for the group's grade.
+
+## Oral exam
+- Oral examinations is tentatively scheduled in the week 49 (December 6th to December 10th). We will send out a doodle poll once it is closer.
