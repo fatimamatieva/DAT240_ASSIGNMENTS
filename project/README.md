@@ -2,7 +2,7 @@
 
 ## Background 
 
-Recent advances in computational capabilities of machines along side advances in algorithmic intelligence, have surpassed expectations and resulted in staggering feats such as 'AlphaGo' defeating a world champion in the game of Go using deep neural networks. With all the perceived superiority of machines in decision making using Deep Learning we are interested in the question -- Do machines think like humans?
+Recent advances in computational capabilities of machines along side advances in algorithmic intelligence, have surpassed expectations and resulted in staggering feats such as 'AlphaGo' defeating a world champion in the game of Go using deep neural networks. With all the perceived superiority of machines in decision making using Deep Learning we are interested in the question -- Do machines think like humans? In this project you will develop a game which can be used to collect the data on how humans think when they see images and identify objects. Or on other workds what humans think are important to classify an object. This will help machine learning scientists compare how neural networks work compared to the way humans think.
 
 ## The game
 
