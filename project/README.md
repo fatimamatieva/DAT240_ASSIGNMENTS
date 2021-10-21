@@ -16,8 +16,8 @@ In two player mode, two players are paired in the beginning of the game -- The P
 
 ### Rules of the game
 
-The proposer get to see the entire image and the label
-that he has to help the guesser guess the label. The sooner the Guesser succeeds, the more points both the Guesser and the Proposer get.
+The proposers get to see the entire image and the label
+that he/she has to help the guesser guess the label. The sooner the Guesser succeeds, the more points both the Guesser and the Proposer get.
 Example of Image and label : The proposer is shown this image and wants the guesser to guess: GoKart
 
 
