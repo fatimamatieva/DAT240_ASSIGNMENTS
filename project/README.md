@@ -118,7 +118,7 @@ It has 3 files
 - Everyone must work in a group since exceuting a project in a team setting is one of the skills that will be assessed in this course.
 - The whole group gets same grade so everyone is collectively responsible for the group's grade.
 - Please register your group (choose a group name containing last names of all team members) along with your team members in [QuickFeed](https://uis.itest.run/app/home)
-- **Registering group in QuickFeed is mandatory** and important since it will create a github repository which you must use for storing and maintaining your code
+- **Registering your group in QuickFeed is mandatory** and important since it will create a github repository which you must use for storing and maintaining your code
 
 
 ## Deadline
