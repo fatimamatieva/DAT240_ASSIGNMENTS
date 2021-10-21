@@ -14,7 +14,7 @@ There are some games which are designed to be fun but also achieve something use
 
 There are some examples of such games like [Peekaboom](https://www.cs.cmu.edu/~biglou/Peekaboom.pdf)
 
-In this your project, you will attempt to do this by making a single or two-player game on recognizing images.
+In this project, you will attempt to do this by making a single or two-player game on recognizing images.
 In single player mode you will be playing against an oracle.
 In two player mode, two players are paired in the beginning of the game -- The Proposer and the Guesser. 
 
