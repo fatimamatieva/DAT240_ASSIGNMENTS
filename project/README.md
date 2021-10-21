@@ -95,7 +95,7 @@ When there is no pairing possible, a single player can play against a random ora
 
 ## Report:
  - Report can be written in a Word document or an overleaf template [here](https://www.overleaf.com/project/5dad513903aef000015ae6d6)
- - The report can be maximum 10 pages
+ - The report can be maximum 10 pages please submit in pdf format only
  - The resport should reflect:
   - How you organized your collaboration and defined your process
   - How you defined your work by splitting work in smaller work items. 
@@ -117,6 +117,7 @@ It has 3 files
 - Each Group will have 5 students. Groups will be based on the self-assessment you filled out. 
 - Everyone must work in a group since exceuting a project in a team setting is one of the skills that will be assessed in this course.
 - The whole group gets same grade so everyone is collectively responsible for the group's grade.
+- Please register your group (choose a group name containing last names of all team members) along with your team members in [QuickFeed](https://uis.itest.run/app/home)
 
 
 ## Deadline
