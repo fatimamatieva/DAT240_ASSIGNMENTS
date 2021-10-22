@@ -100,13 +100,13 @@ When there is no pairing possible, a single player can play against a random ora
  - Report can be written in a Word document or an overleaf template [here](https://www.overleaf.com/read/nkhzxdyqhkjn)
  - The report can be maximum 10 pages please submit in pdf format only
  - The resport should reflect:
-  - How you organized your collaboration and defined your process
-  - How you defined your work by splitting work in smaller work items. 
-  - How you tracked your work
-  - Technical decisions you made during the project and why that decision was made
-  - How did you communicate
-  - How did you stop and evaluate during the project. What worked and what did not work. What changes did they make and how did they work?
-  - Perfectly okay to make mistakes and screw up things underway, if they can show that they acknowledged it, came up with a solution, implemented it and evaluated it.
+   - How you organized your collaboration and defined your process
+   - How you defined your work by splitting work in smaller work items. 
+   - How you tracked your work
+   - Technical decisions you made during the project and why that decision was made
+   - How did you communicate
+   - How did you stop and evaluate during the project. What worked and what did not work. What changes did they make and how did they work?
+   - Perfectly okay to make mistakes and screw up things underway, if they can show that they acknowledged it, came up with a solution, implemented it and evaluated it.
 
 ## Dataset
 
