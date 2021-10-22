@@ -95,7 +95,7 @@ When there is no pairing possible, a single player can play against a random ora
 - Abstractions - Is it easy to replace the implementation of the single player Oracle with another one (for instance an AI model)
 
 ## Report:
- - Report can be written in a Word document or an overleaf template [here](https://www.overleaf.com/project/5dad513903aef000015ae6d6)
+ - Report can be written in a Word document or an overleaf template [here](https://www.overleaf.com/read/nkhzxdyqhkjn)
  - The report can be maximum 10 pages please submit in pdf format only
  - The resport should reflect:
   - How you organized your collaboration and defined your process
