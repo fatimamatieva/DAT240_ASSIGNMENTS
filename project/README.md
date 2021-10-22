@@ -82,6 +82,8 @@ When there is no pairing possible, a single player can play against a random ora
 - Manual slicing 
 - Categorize the image
 
+**Note that the advanced features are not necessary to get a passing grade, but to be considered a delivery of very good or excellent performance one or two advanced features need to be implemented.**
+
 ## Criteria for judging the delivery:
 
 - Separation of Concerns. Game logic is clearly separated from infrastructure logic and UI logic. 
