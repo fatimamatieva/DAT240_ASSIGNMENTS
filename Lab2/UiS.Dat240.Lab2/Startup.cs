@@ -23,10 +23,13 @@ namespace UiS.Dat240.Lab2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< HEAD
             services.AddDbContext<ShopContext>(options =>
                     options.UseSqlite("Data Source = Shop.db"));
             services.AddScoped<IFoodItemProvider, FoodItemProvider>();
             services.AddScoped<IFoodItemValidator, FoodItemValidator>();
+=======
+>>>>>>> parent of 098f4b6... commit operation
             services.AddRazorPages();
             services.AddDbContext<ShopContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));

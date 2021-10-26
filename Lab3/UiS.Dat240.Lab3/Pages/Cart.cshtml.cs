@@ -23,5 +23,16 @@ namespace UiS.Dat240.Lab3.Pages
 
 			Cart = await _mediator.Send(new Get.Request(cartId.Value));
 		}
+		/* public async Task<IActionResult> OnPostAsync(string Building,string RoomNumber, string Notes, string customerName)
+        {
+            var cartId = HttpContext.Session.GetGuid("CartId");
+            if (cartId is null) return RedirectToPage();
+
+
+            Cart = await _mediator.Send(new Get.Request(cartId.Value));
+            var location = await _mediator.Send(new PlaceOrder.Request(cartId.Value, customerName, Building, RoomNumber, Notes));
+            return RedirectToPage("OrderOverview");
+
+        } */
 	}
 }

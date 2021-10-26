@@ -7,6 +7,7 @@ using UiS.Dat240.Lab3.Core.Domain.Products;
 using UiS.Dat240.Lab3.SharedKernel;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using UiS.Dat240.Lab3.Core.Domain.Ordering;
 
 namespace UiS.Dat240.Lab3.Infrastructure.Data
 {
@@ -20,11 +21,15 @@ namespace UiS.Dat240.Lab3.Infrastructure.Data
 		}
 
 		public DbSet<FoodItem> FoodItems { get; set; } = null!;
+		/* public DbSet<Order> Order {get; set;} = null!; */
 		public DbSet<ShoppingCart> ShoppingCart { get; set; } = null!;
-
+		public DbSet<Order> Orders{get; set;} = null!;
+		public DbSet<Customer> Customers{get; set;} = null!;
+ 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 			base.OnModelCreating(modelBuilder);
+			modelBuilder.Entity<Order>().OwnsOne(p => p.Location);
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

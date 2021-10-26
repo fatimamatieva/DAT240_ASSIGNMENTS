@@ -1,4 +1,83 @@
-﻿@page
+﻿@*
+@page
+@model Lab3.Pages.CartModel
+@{
+	ViewData["Title"] = "Shopping cart";
+}
+
+<div class="text-center mt-4">
+
+	<h1 class="display-4 mt-5">Your cart</h1>
+	<div class="text-left">
+		@if (Model.Cart is null)
+		{
+			<p>There is nothing in your cart</p>
+		}
+		else
+		{
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Dish</th>
+						<th scope="col">Count</th>
+						<th scope="col">Price</th>
+						<th scope="col">Sum</th>
+						*@
+@* 						<th scope="col">Location Notes</th>
+						<th scope="col">Customer Name</th>
+						<th scope="col">Building</th>
+						<th scope="col">Room Number</th> *@
+						@*
+					</tr>
+				</thead>
+				<tbody>
+
+					@foreach (var item in Model.Cart.Items)
+					{
+						<tr>
+							<th scope="row">@item.Name</th>
+							<td>@item.Count</td>
+							<td>@item.Price</td>
+							<td>@item.Sum</td>
+							*@
+
+@* 							<td>@item.Location</td>
+							<td>@item.Customer</td>
+							<td>@item.Building</td>
+							<td>@item.Room Number</td> *@
+
+@*							
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+	</div>
+</div>
+
+<form method="post" class="mt-5">
+        <div class="mb-3">
+            Building:
+            <input asp-for="Building" class="form-control" />
+        </div>
+        <div class="mb-3">
+            Notes:
+            <input asp-for="Notes" class="form-control" />
+        </div>
+        <div class="mb-3">
+            RoomNumber:
+            <input asp-for="RoomNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            customername:
+            <input asp-for="customerName" class="form-control" />
+        </div>
+</form>
+*@
+
+
+
+@page
 @model Lab3.Pages.CartModel
 @{
 	ViewData["Title"] = "Shopping cart";

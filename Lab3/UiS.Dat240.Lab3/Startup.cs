@@ -47,6 +47,7 @@ namespace UiS.Dat240.Lab3
 
 			// MediatR is used to dispatch requests to our domain. See https://github.com/jbogard/MediatR for more information.
 			services.AddMediatR(typeof(Startup));
+			services.AddTransient<IOrderingService, OrderingService>();
 
 			// We're using Scrutor extension methods to find all classes that implement IValidator<T> and register them to the service collecion.
 			// That means we can request IValidator<FoodItem> in our constructor and get delivered the FoodItemValidator implementation, since that

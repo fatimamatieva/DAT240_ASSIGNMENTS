@@ -11,9 +11,12 @@ namespace UiS.Dat240.Lab3.Core.Domain.Cart
 			Name = name;
 			Price = price;
 			Count = 1;
+			
+			
+
 		}
 		public Guid Id { get; protected set; }
-
+	
 		public int Sku { get; private set; }
 		public string Name { get; set; }
 		public decimal Price { get; set; }

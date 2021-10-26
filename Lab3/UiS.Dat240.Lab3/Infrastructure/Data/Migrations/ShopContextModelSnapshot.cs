@@ -56,6 +56,72 @@ namespace UiS.Dat240.Lab3.Migrations
                     b.ToTable("ShoppingCart");
                 });
 
+            modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Ordering.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Ordering.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Ordering.OrderLine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("Item")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderLine");
+                });
+
             modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Products.FoodItem", b =>
                 {
                     b.Property<int>("Id")
@@ -88,9 +154,58 @@ namespace UiS.Dat240.Lab3.Migrations
                         .HasForeignKey("ShoppingCartId");
                 });
 
+            modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Ordering.Order", b =>
+                {
+                    b.HasOne("UiS.Dat240.Lab3.Core.Domain.Ordering.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
+                    b.OwnsOne("UiS.Dat240.Lab3.Core.Domain.Ordering.Location", "Location", b1 =>
+                        {
+                            b1.Property<int>("OrderId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("Building")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("RoomNumber")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.HasKey("OrderId");
+
+                            b1.ToTable("Orders");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrderId");
+                        });
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Location")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Ordering.OrderLine", b =>
+                {
+                    b.HasOne("UiS.Dat240.Lab3.Core.Domain.Ordering.Order", null)
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId");
+                });
+
             modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Cart.ShoppingCart", b =>
                 {
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("UiS.Dat240.Lab3.Core.Domain.Ordering.Order", b =>
+                {
+                    b.Navigation("OrderLines");
                 });
 #pragma warning restore 612, 618
         }
