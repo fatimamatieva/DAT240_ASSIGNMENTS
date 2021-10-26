@@ -155,5 +155,45 @@ This link describes how to define an object as an value object (Owned entity) in
 
 Look at how things are implemented in Cart and Product Context. To get the extra information needed for the order, you could create a form on the checkout page, like Product have a create new food item. Use the code already there, and the code created in lab2 to get inspiration for how to do this lab.
 
-Also try and find the code for the different objects from the product and cart context shown in the diagrams. The cart and product context models have already been created, and see how the fields from the code match up with the diagram.
+Also try and find the code for the different objects from the product and cart context shown in the diagrams. The cart and product context models have already been created, and see how the fields from the code match up with the diagram. 
 
+### OrderService.PlaceOrder
+
+The place order in ordering service should do the following:
+
+1. Retrieve the customer from the database by name, look at the GetById pipeline for inspiration for how to retrieve entries.
+   1. It should be retrieved by name (customerName)
+2. If the returned object is null, then assign a new customer to the variable, add it to the database and use that customer instead.
+3. Create a `new Order`
+   1. Assign the Location, and Customer to the order
+   2. Loop through all the OrderLineDtos and add them to the `order.AddOrderLine` method.
+   3. The `order.AddOrderLine` method should add the orderline to a list in the Order.
+4. Add the order to the database and save changes
+5. Update the status of the Order to placed and make sure that the OrderPlaced event is added to the `order.event` list. This 
+6. Save the new changes to the database
+
+### Approval script
+
+1. Start application
+2. Add item to cart
+   1. Change name, the cart should be updated
+   2. Change price, the cart should be updated
+3. Checkout cart with
+   * Building
+   * Room number
+   * location notes
+   * Customer name
+4. Display all orders (Status for the new order should be placed)
+   1. Go to details for the order
+      * All information for the order should be exposed
+        * Id, status, date, customer, location, items, offer, invoice
+   2. Take the order with a name
+      * The order should now have status Shipped
+      * The offer now include information about the shipper
+   3. The overview should also display the order as shipped
+5. Show the code for Price change
+6. Show place order pipeline
+7. Show code for place order service
+8. Show the event handlers for OrderPlaced
+9. Show pipeline for Set shipper
+10. Show the event handler for OfferShipperSet

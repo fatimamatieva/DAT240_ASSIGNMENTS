@@ -18,8 +18,8 @@ The second lab is building an asp.net core ordering application.
 
 # Lab3
 
-More info to come at a later point!
+Implementing DDD for the asp-net core ordering application.
 
 # Project
 
-More info to come at a later point!
+Implementing a game with asp.net core web technologies
